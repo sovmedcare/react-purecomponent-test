@@ -9,10 +9,7 @@ class App extends React.PureComponent {
     pureRenderMode: true
   }
   value = {pureRenderMode: true}
-  componentWillUpdate = (prevProps, prevState) => {
-    console.log('Parent Will Updated!')
-    console.log(this.state)
-  }
+
   componentDidUpdate = (prevProps, prevState) => {
     console.log('Parent Updated!')
     console.log(this.state)
