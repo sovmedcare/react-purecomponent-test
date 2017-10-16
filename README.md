@@ -11,6 +11,6 @@
 
 1. 當`extends React.PureComponent`又再使用`shouldComponentUpdate`時，**console.log**會報錯
 
-2. 當傳給`Children Component`的**props**「是」pure，更新`Children Component`會觸發children的**ComponentDidUpdate** & **render**，但畫面上不會有任何改變，真的被**skip**掉了
+2. 當傳給`Children Component`的**props**「是」一樣的reference，更新`Children Component`會觸發children的**ComponentDidUpdate** & **render**，但畫面上不會有任何改變，真的被**skip**掉了，*ex. `value={this.value}`*
 
-3. 當傳給`Children Component`的**props**「不是」pure，更新`Children Component`會影響畫面上的結果，一樣有觸發**ComponentDidUpdate** & **render**；`Parent Component`的更新會觸發`Children Component`的**update** & **render** *(pure的時候沒有)*
+3. 當傳給`Children Component`的**props**「不是」一樣的reference，更新`Children Component`會影響畫面上的結果，一樣有觸發**ComponentDidUpdate** & **render**；更新`Parent Component`會觸發`Children Component`的**update** & **render** *(pure的時候沒有)*，*ex. `value={{x: 1, y: 2}}`*
