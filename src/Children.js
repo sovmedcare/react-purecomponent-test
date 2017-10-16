@@ -2,7 +2,7 @@ import React from 'react'
 
 class Children extends React.PureComponent {
   state = {
-    updateText: 'Update...',
+    updateText: 'Update...'
   }
   handleClick = e => {
     const text = this.state.updateText + '.'
